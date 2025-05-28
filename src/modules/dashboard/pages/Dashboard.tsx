@@ -214,11 +214,11 @@ interface QuickActionButtonProps {
   icon: string;
   title: string;
   description: string;
-  color: string;
+  color: 'blue' | 'green' | 'purple' | 'orange';
 }
 
 const QuickActionButton: React.FC<QuickActionButtonProps> = ({ icon, title, description, color }) => {
-  const colorClasses = {
+  const colorClasses: Record<'blue' | 'green' | 'purple' | 'orange', string> = {
     blue: 'hover:bg-blue-50 border-blue-200',
     green: 'hover:bg-green-50 border-green-200',
     purple: 'hover:bg-purple-50 border-purple-200',
@@ -274,13 +274,13 @@ interface GoalItemProps {
   title: string;
   current: number;
   target: number;
-  color: string;
+  color: 'blue' | 'green' | 'purple';
 }
 
 const GoalItem: React.FC<GoalItemProps> = ({ title, current, target, color }) => {
   const percentage = (current / target) * 100;
   
-  const colorClasses = {
+  const colorClasses: Record<'blue' | 'green' | 'purple', string> = {
     blue: 'bg-blue-500',
     green: 'bg-green-500',
     purple: 'bg-purple-500',
